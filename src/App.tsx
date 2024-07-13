@@ -1,13 +1,20 @@
-import { Chip } from "@mui/material";
-import BasicDateCalendar from "./styles/Calendar";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Layout from "./components/organism/Layout";
+import Mainpage from "./components/organism/Mainpage";
+import AttendanceCheck from "./components/organism/AttendanceCheck";
+import Students from "./components/organism/Students";
 
 function App() {
   return (
-    <div className="text-sky-300">
-      hello 팀원들
-      <Chip label="woo" />
-      <BasicDateCalendar />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/mainpage" Component={Mainpage} />
+          <Route path="/attendance_check" Component={AttendanceCheck} />
+          <Route path="/students" Component={Students} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
