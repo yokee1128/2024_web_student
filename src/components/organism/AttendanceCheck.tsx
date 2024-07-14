@@ -60,15 +60,22 @@ const rows = [
 const AttendanceCheck = () => {
 
   return (
-    // <div className="w-screen h-screen my-auto mx-auto flex">
-    //   <Layout />
-    //   <div className="w-4/5 my-4 mr-4 h-32 bg-gray-50 content-center text-center ">
-    //   <Navi/>
-    // </div>
+    <div className="w-screen h-screen my-auto mx-auto flex">
+      <Layout />
+      
       <div>
         <Grid container spacing={3}>
           <Grid item xs={6} md={12}>
-            <Item>1</Item>
+            <Item>
+              <div className="w-4/5 my-4 mr-4 h-32 bg-gray-50 content-center text-center ">
+                <Navi/>
+              </div>
+            </Item>
+          </Grid>
+          <Grid item xs={6} md={12}>
+            <Item>
+              2
+            </Item>
           </Grid>
           <Grid item xs={6} md={12}>
             <Item>
@@ -88,15 +95,11 @@ const AttendanceCheck = () => {
             </Item>
           </Grid>
           <Grid item xs={6} md={12}>
-            <Item>
-              3
-            </Item>
-          </Grid>
-          <Grid item xs={6} md={12}>
             <Item>4</Item>
           </Grid>
         </Grid>
       </div>
+    </div>
   );
   
 };
