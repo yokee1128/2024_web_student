@@ -1,17 +1,19 @@
+
 import { Grid, MenuItem } from "@mui/material";
 
-
+import { Chip } from "@mui/material";
+import Layout from "../layout/Layout";
+import Navi from "../molecules/Navi";
 
 const AttendanceCheck = () => {
   
   return (
-    <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-  {Array.from(Array(6)).map((_, index) => (
-    <Grid item xs={2} sm={4} md={4} key={index}>
-      <MenuItem>xs=2</MenuItem>
-    </Grid>
-  ))}
-</Grid>
+    <div className="w-screen h-screen my-auto mx-auto flex">
+      <Layout />
+      <div className="w-4/5 my-4 mr-4 h-32 bg-gray-50 content-center text-center ">
+      <Navi/>
+      </div>
+    </div>
   );
   
 };
