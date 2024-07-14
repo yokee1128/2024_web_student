@@ -11,8 +11,20 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 const columns: GridColDef[] = [
-  { field: 'id', headerName: 'ID', width: 70 },
-  { field: 'name', headerName: '이름', width: 130 },
+  { 
+    field: 'id', 
+    headerName: 'ID', 
+    headerAlign: 'center', 
+    align: 'left', 
+    width: 70 
+  },
+  { 
+    field: 'name', 
+    headerName: '이름', 
+    headerAlign: 'center', 
+    align: 'center', 
+    width: 100 
+  },
   {
     field: 'phone',
     headerName: '핸드폰번호',
@@ -22,11 +34,13 @@ const columns: GridColDef[] = [
     width: 200,
   },
   {
-    field: 'fullName',
-    headerName: 'Full name',
+    field: 'address',
+    headerName: '주소',
+    headerAlign: 'center', 
+    align: 'left', 
     description: 'This column has a value getter and is not sortable.',
     sortable: false,
-    width: 160,
+    width: 500,
     valueGetter: (value, row) => `${row.name || ''}`,
   },
 ];
