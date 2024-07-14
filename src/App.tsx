@@ -1,4 +1,3 @@
-import { Chip } from "@mui/material";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "./components/organism/Layout";
 import Mainpage from "./components/organism/Mainpage";
