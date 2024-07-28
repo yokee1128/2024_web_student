@@ -82,7 +82,7 @@ function days(){
     let arr = [];
     for (let i = 1; i <= lastDay; i++){
         arr.push(
-            <TableCell align="center">{i}</TableCell>
+            <TableCell className='text-center'>{i}</TableCell>
         )
     }
 
@@ -105,11 +105,11 @@ const AttendanceTable = () => {
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
             <TableRow>
-               <TableCell align="center" colSpan={lastDay+2}>{tormattedDate}</TableCell> 
+               <TableCell className='text-center' colSpan={lastDay+2}>{tormattedDate}</TableCell> 
             </TableRow>
           <TableRow>
-            <TableCell align="center">학번</TableCell>
-            <TableCell align="center" width="100">이름</TableCell>
+            <TableCell align='center'>학번</TableCell>
+            <TableCell className='text-center'>이름</TableCell>
             {days()}
           </TableRow>
         </TableHead>
@@ -119,41 +119,43 @@ const AttendanceTable = () => {
               key={row.id}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-                <TableCell component="th" scope="row" align="center">
-                    {row.id}
+                <TableCell className='text-center'>
+                  {row.id}
                 </TableCell>
-                <TableCell align="center">{row.name}</TableCell>
-                <TableCell align ="center">{row.day1}</TableCell>
-                <TableCell align ="center">{row.day2}</TableCell>
-                <TableCell align ="center">{row.day3}</TableCell>
-                <TableCell align ="center">{row.day4}</TableCell>
-                <TableCell align ="center">{row.day5}</TableCell>
-                <TableCell align ="center">{row.day6}</TableCell>
-                <TableCell align ="center">{row.day7}</TableCell>
-                <TableCell align ="center">{row.day8}</TableCell>
-                <TableCell align ="center">{row.day9}</TableCell>
-                <TableCell align ="center">{row.day10}</TableCell>
-                <TableCell align ="center">{row.day11}</TableCell>
-                <TableCell align ="center">{row.day12}</TableCell>
-                <TableCell align ="center">{row.day13}</TableCell>
-                <TableCell align ="center">{row.day14}</TableCell>
-                <TableCell align ="center">{row.day15}</TableCell>
-                <TableCell align ="center">{row.day16}</TableCell>
-                <TableCell align ="center">{row.day17}</TableCell>
-                <TableCell align ="center">{row.day18}</TableCell>
-                <TableCell align ="center">{row.day19}</TableCell>
-                <TableCell align ="center">{row.day20}</TableCell>
-                <TableCell align ="center">{row.day21}</TableCell>
-                <TableCell align ="center">{row.day22}</TableCell>
-                <TableCell align ="center">{row.day23}</TableCell>
-                <TableCell align ="center">{row.day24}</TableCell>
-                <TableCell align ="center">{row.day25}</TableCell>
-                <TableCell align ="center">{row.day26}</TableCell>
-                <TableCell align ="center">{row.day27}</TableCell>
-                <TableCell align ="center">{row.day28}</TableCell>
-                <TableCell align ="center">{row.day29}</TableCell>
-                <TableCell align ="center">{row.day30}</TableCell>
-                <TableCell align ="center">{row.day31}</TableCell>
+                <TableCell className='text-center'>
+                  {row.name}
+                </TableCell>
+                <TableCell className='text-center'>{row.day1}</TableCell>
+                <TableCell className='text-center'>{row.day2}</TableCell>
+                <TableCell className='text-center'>{row.day3}</TableCell>
+                <TableCell className='text-center'>{row.day4}</TableCell>
+                <TableCell className='text-center'>{row.day5}</TableCell>
+                <TableCell className='text-center'>{row.day6}</TableCell>
+                <TableCell className='text-center'>{row.day7}</TableCell>
+                <TableCell className='text-center'>{row.day8}</TableCell>
+                <TableCell className='text-center'>{row.day9}</TableCell>
+                <TableCell className='text-center'>{row.day10}</TableCell>
+                <TableCell className='text-center'>{row.day11}</TableCell>
+                <TableCell className='text-center'>{row.day12}</TableCell>
+                <TableCell className='text-center'>{row.day13}</TableCell>
+                <TableCell className='text-center'>{row.day14}</TableCell>
+                <TableCell className='text-center'>{row.day15}</TableCell>
+                <TableCell className='text-center'>{row.day16}</TableCell>
+                <TableCell className='text-center'>{row.day17}</TableCell>
+                <TableCell className='text-center'>{row.day18}</TableCell>
+                <TableCell className='text-center'>{row.day19}</TableCell>
+                <TableCell className='text-center'>{row.day20}</TableCell>
+                <TableCell className='text-center'>{row.day21}</TableCell>
+                <TableCell className='text-center'>{row.day22}</TableCell>
+                <TableCell className='text-center'>{row.day23}</TableCell>
+                <TableCell className='text-center'>{row.day24}</TableCell>
+                <TableCell className='text-center'>{row.day25}</TableCell>
+                <TableCell className='text-center'>{row.day26}</TableCell>
+                <TableCell className='text-center'>{row.day27}</TableCell>
+                <TableCell className='text-center'>{row.day28}</TableCell>
+                <TableCell className='text-center'>{row.day29}</TableCell>
+                <TableCell className='text-center'>{row.day30}</TableCell>
+                <TableCell className='text-center'>{row.day31}</TableCell>
             </TableRow>
           ))}
         </TableBody>

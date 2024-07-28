@@ -10,18 +10,14 @@ export default function DatePickerValue() {
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <DemoContainer components={['DatePicker', 'DatePicker']}>
-            <DatePicker
-                label="Controlled picker"
-                value={value}
-                onChange={(newValue) => setValue(newValue)}
-                />
-            <DatePicker
-                label="Controlled picker"
-                value={value}
-                onChange={(newValue) => setValue(newValue)}
-            />
-        </DemoContainer>
+      <DemoContainer components={['DatePicker', 'DatePicker', 'DatePicker']}>
+        {/* <DatePicker
+          label={'"year", "month" and "day"'}
+          views={['year', 'month', 'day']}
+        />
+        <DatePicker label={'"day"'} views={['day']} /> */}
+        <DatePicker label={'"month" and "year"'} views={['month', 'year']} />
+      </DemoContainer>
     </LocalizationProvider>
   );
 }
