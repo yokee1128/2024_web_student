@@ -2,25 +2,32 @@ import { FormControl, FormHelperText, InputLabel, MenuItem, Select, SelectChange
 import { useState } from "react";
 
 type BasicSelectType = {
-    
+  inputlabelname: string,
+  menuitems?: {
+    code: string,
+    name: string,
+  }[],
+  value: string,
+  handleChange: (event: SelectChangeEvent<string>) => void,
 }
 
-const BasicSelect = () => {
-    const [selGrade, setSelGrade] = useState('');
-    const handelChange = (event: SelectChangeEvent) => {
-        setSelGrade(event.target.value);
-    }
+const BasicSelect = ({inputlabelname, menuitems = [], value, handleChange}:BasicSelectType) => {
+    // const [selGrade, setSelGrade] = useState('');
+    // const handelChange = (event: SelectChangeEvent) => {
+    //     setSelGrade(event.target.value);
+    // }
     return (
         <FormControl sx={{m:1, minWidth: 100}}>
-            <InputLabel id="grade-select-label">학년</InputLabel>
+            <InputLabel id="grade-select-label">{inputlabelname}</InputLabel>
             <Select 
                 labelId="grade-select-label"
                 id="grade-select"
-                value={selGrade}
-                label="학년"
-                onChange={handelChange}
+                value={value}
+                onChange={handleChange}
              >
-            <MenuItem value={1}>1학년</MenuItem>    
+            {menuitems.map((item) => (
+                <MenuItem key={item.code} value={item.code}>{item.name}</MenuItem>
+            ))}
             </Select>   
         </FormControl>
     )
