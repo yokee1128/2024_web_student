@@ -2,12 +2,12 @@ import Navi from "../molecules/Navi";
 import Layout from "../layout/Layout";
 import { DateCalendar } from "@mui/x-date-pickers";
 import BasicDateCalendar from "../../styles/Calendar";
-import AttendanceChart from "../molecules/AttendanceChart";
-import AttendanceList from "../molecules/AttendanceList";
-import AttendanceSchedule from "../molecules/AttendanceSchedule";
+import AttendanceChart from "../../lsk/components//AttendanceChart";
+import AttendanceList from "../../lsk/components/AttendanceList";
+import AttendanceSchedule from "../../lsk/components/AttendanceSchedule";
 import {useState, useEffect} from 'react'
 import dayjs from "dayjs";
-import BasicSelect from "../atom/BasicSelect";
+import BasicSelect from "../../lsk/components/BasicSelect";
 import axios from "axios";
 
 type GradeType = {

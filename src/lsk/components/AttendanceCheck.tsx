@@ -3,8 +3,8 @@ import styled from "@emotion/styled";
 import * as React from 'react';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import { Grid, Paper } from "@mui/material";
-import Layout from "../layout/Layout";
-import Navi from "../molecules/Navi";
+import Layout from "../../components/layout/Layout";
+import Navi from "../../components/molecules/Navi";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundcolor: '#EEE',
