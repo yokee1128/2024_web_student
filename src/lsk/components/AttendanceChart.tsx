@@ -22,7 +22,7 @@ const AttendanceChart = ({pickDt, pickGrade, pickClass, attendanceCnt, absenceCn
 
     useEffect(() => {
         if(pickDt && pickGrade && pickClass){
-            axios.get('http://localhost:4000/api/attendancechart',{  
+            axios.get('http://localhost:4000/api/attendancechart',{
                 params : {
                     pickdt : pickDt,
                     pickgrade: pickGrade,
