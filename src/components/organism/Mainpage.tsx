@@ -113,7 +113,7 @@ const Mainpage = () => {
               <BasicDateCalendar pickDt={pickDate} setPickDt={setPickDate} />
             </div>
             <div className="w-full h-1/2 border border-red-500 ">
-              이번주 행사
+              이번주 행사 일정
               <AttendanceSchedule pickDt={pickDate}/>
             </div>
           </div>
