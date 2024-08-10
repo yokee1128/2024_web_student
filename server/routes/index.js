@@ -3,6 +3,19 @@ const router = express();
 const db = require('../config/db');
 
 // http://localhost:4000/ 으로 접속 시 응답메시지 출력
+const QUERY = {
+  FINDMEMO: `select * from memo where memo`,
+  INSERTMEMO : `
+      insert into memo (memo_date, memo_title)
+      values (?, ?)
+  `,
+  UPDATEMEMO : `
+   update memo
+      set memo_title = ?,
+    where memo_id = ?
+  `
+}
+
 
 //학년, 반 가져오기
 router.get('/getgrade',(req,res)=>{
@@ -122,5 +135,21 @@ router.get('/attendancechart', (req, res) => {
   })
 })
 
+
+router.post('/memo/insert', (req, res) => {
+  const { adate, atitle } = req.body;
+  console.log({ adate, atitle } )
+  db.query(QUERY.INSERTMEMO, [adate, atitle], (err, result) => {
+    if (!err) res.json({ status: true, id: result.insertId });
+    else res.json({status:"fail"})
+  });
+  //res.json({status:"아몰랑"})
+});
+
+
+router.post('/memo/update', (req, res)=>{
+  const {id, title} = req.body;
+  db.query(QUERY.UPDATEMEMO, [title, id]);
+})
  
 module.exports = router;

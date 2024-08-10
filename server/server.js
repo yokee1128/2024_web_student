@@ -3,9 +3,12 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const api = require('./routes/index');
+const body = require('body-parser');
 
 // CORS 설정
 app.use(cors());
+
+app.use(body.json());
 
 // api 처리는 './routes/index'에서 일괄처리
 app.use('/api', api);

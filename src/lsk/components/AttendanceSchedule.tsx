@@ -24,7 +24,7 @@ const AttendanceSchedule = ({pickDt}:AttendanceScheduleType) => {
             params : {
               pickdt : pickDt,
             }
-          }).then((res) => {setData(res.data.schedule); console.log(res.data.schedule)})
+          }).then((res) => {setData(res.data.schedule); })
           .catch((err) => console.log(err));
       }
     },[pickDt]); 
