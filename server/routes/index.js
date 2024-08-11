@@ -28,7 +28,7 @@ router.get('/getclass',(req,res)=>{
   db.query(query, pickgrade,(err, data) => {
     if(!err) res.send({ class : data});
     else res.send(err);
-})  
+  })  
 })
 
 //출석현황
