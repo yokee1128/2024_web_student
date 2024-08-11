@@ -24,25 +24,10 @@ const AttendanceSchedule = ({pickDt}:AttendanceScheduleType) => {
             params : {
               pickdt : pickDt,
             }
-<<<<<<< HEAD
-          }).then((res) => {setData(res.data.schedule); console.log(res.data.schedule)})
-=======
           }).then((res) => {setData(res.data.schedule); })
->>>>>>> c1e7ea0f25383e5a62f8022251d09efc65511e20
           .catch((err) => console.log(err));
       }
-    },[pickDt]); 
-
-<<<<<<< HEAD
-=======
-    // useEffect(()=>{
-    //   axios.get('http://apis.data.go.kr/B090041/openapi/service/SpcdeInfoService',{
-    //     params: {
-    //       ServiceKey : ''
-    //     }
-    //   })
-    // })
->>>>>>> c1e7ea0f25383e5a62f8022251d09efc65511e20
+    },[pickDt]);
 
     const columns: GridColDef[] = [
       { field: 'SCHEDULE_NO', 

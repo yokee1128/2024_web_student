@@ -70,7 +70,7 @@ const AttendanceTable = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-            {/* <TableRow
+            <TableRow
               key={row.id}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
@@ -83,7 +83,7 @@ const AttendanceTable = () => {
                 <TableCell align='center'>
                   {row.days}
                 </TableCell>
-            </TableRow> */}
+            </TableRow>
         </TableBody>
       </Table>
     </TableContainer>
