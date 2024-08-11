@@ -20,18 +20,19 @@ const InsertMemo = ({pickDt}:InsertMemo) => {
 
     useEffect(() => {
         if(save){
-          console.log( {title});
-            axios.post('http://localhost:4000/api/memo/insert',{
-                params : {
-                  adate: {pickDt},
-                  atitle: {title},
-                }
-                }).then((res) => {console.log( title)})
+          console.log( title +'_'+ pickDt);
+            axios.post('http://localhost:4000/api/memo/insert', {
+                adate: pickDt,
+                atitle: title
+              
+                }).then((res) => {console.log( title +'_'+ pickDt)})
                 .catch((err) => {
                     console.log(err);
                 })
-                .finally(() =>
+                .finally(() => {
                     setSave(!save)
+                    setTitle('')
+                   }
                 )
             }
     },[save])

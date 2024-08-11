@@ -22,13 +22,20 @@ const Mainpage = () => {
   const [pickGrade, setPickGrade] = useState<string>('');
   const [pickClass, setPickClass] = useState<string>('');
 
+  useEffect(() => {
+    setPickGrade(localStorage.getItem('grade')?.toString() || '');
+    setPickClass(localStorage.getItem('class')?.toString() || '');
+  },[])
+
   const handleGradeChange = (event: any) => {
     setPickGrade(event.target.value);
     setPickClass('');
+    localStorage.setItem('grade', event.target.value);
   };
 
   const handleClassChange = (event: any) => {
     setPickClass(event.target.value);
+    localStorage.setItem('class', event.target.value);
   };  
 
 

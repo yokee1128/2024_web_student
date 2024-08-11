@@ -8,14 +8,13 @@ type MemoType = {
 
 const Memo = ({pickDT}:MemoType) => {
     
-    const [gubun, setGubun] = useState<string>('');
-    console.log(pickDT)
+    const [gubun, setGubun] = useState<string>('today');
     return (
         <div>
             <Head gubun={gubun} setGubun={setGubun}/>
 
       
-            {gubun =='in'? <InsertMemo pickDt={pickDT}/> : <Body/>}
+            {gubun =='in'? <InsertMemo pickDt={pickDT}/> : <Body pickDt={pickDT} gubun={gubun} />}
 
             {/* <Body /> */}
         </div>

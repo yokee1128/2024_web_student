@@ -26,10 +26,13 @@ type Props = {
     setGubun("in");
   }
 
-  const changnullgubun = () => {
-    setGubun("");
+  const changtodaygubun = () => {
+    setGubun("today");
   }
 
+  const changeweekgubun = () => {
+    setGubun("week");
+  }
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -42,7 +45,7 @@ type Props = {
             aria-label="menu"
             sx={{ mr: 2 }}
 
-            onClick={changnullgubun}
+            onClick={changtodaygubun}
           >
             <CheckIcon />
             오늘
@@ -53,6 +56,8 @@ type Props = {
             color="inherit"
             aria-label="menu"
             sx={{ mr: 2 }}
+
+            onClick={changeweekgubun}
           >
             <CodeIcon />
             주간

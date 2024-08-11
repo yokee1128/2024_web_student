@@ -3,16 +3,16 @@ import { TEXTSTYLE } from "../../styles/textStyle";
 
 type CheckedLabelProps = {
   isChecked?: boolean;
-  contents?: string;
+  title?: string;
 };
 
 const CheckedLabel = ({
   isChecked = false,
-  contents = ERROR.NOFUNCTION,
+  title = ERROR.NOFUNCTION,
 }: CheckedLabelProps) => {
   return (
     <span className={isChecked ? TEXTSTYLE.DONE : TEXTSTYLE.TODO}>
-      {contents}
+      {title}
     </span>
   );
 };

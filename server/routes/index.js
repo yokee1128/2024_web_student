@@ -4,7 +4,12 @@ const db = require('../config/db');
 
 // http://localhost:4000/ 으로 접속 시 응답메시지 출력
 const QUERY = {
-  FINDMEMO: `select * from memo where memo`,
+  FINDTODAYMEMO: `select memo_id as id, memo_title as title from memo where memo_date = ? `,
+  FINDWEEKMEMO: `SELECT memo_id as id, memo_title as title
+  FROM memo
+ WHERE memo_date BETWEEN 
+       DATE_SUB(?, INTERVAL (WEEKDAY(?) + 1) DAY) AND 
+       DATE_ADD(DATE_SUB(?, INTERVAL (WEEKDAY(?) + 1) DAY), INTERVAL 6 DAY)`,
   INSERTMEMO : `
       insert into memo (memo_date, memo_title)
       values (?, ?)
@@ -13,6 +18,10 @@ const QUERY = {
    update memo
       set memo_title = ?,
     where memo_id = ?
+  `,
+  DELETEMEMO : `
+    delete from memo
+     where memo_id = ?
   `
 }
 
@@ -136,9 +145,37 @@ router.get('/attendancechart', (req, res) => {
 })
 
 
+router.get('/memo/select', (req, res) => {
+  const {pickdt, pickgb} = req.query;
+  console.log(pickdt)
+
+  if (pickgb == 'week'){
+    db.query(QUERY.FINDWEEKMEMO, [pickdt, pickdt, pickdt, pickdt], (err, data) => {
+      if(!err) res.send({memo : data});
+      else res.send(err);
+    });
+  } else {
+    db.query(QUERY.FINDTODAYMEMO, [pickdt], (err, data) => {
+      if(!err) res.send({memo : data});
+      else res.send(err);
+    });
+  } 
+});
+
+router.post('/memo/delete', (req, res) => {
+  const {pickid} = req.body;
+  console.log(pickid);
+
+  const numericPickId = Number(pickid);
+
+  db.query(QUERY.DELETEMEMO, [numericPickId],  (err, result) => {
+    if (!err) res.json({ status: true, result});
+    else res.json({status: false})
+  });
+});
+
 router.post('/memo/insert', (req, res) => {
   const { adate, atitle } = req.body;
-  console.log({ adate, atitle } )
   db.query(QUERY.INSERTMEMO, [adate, atitle], (err, result) => {
     if (!err) res.json({ status: true, id: result.insertId });
     else res.json({status:"fail"})

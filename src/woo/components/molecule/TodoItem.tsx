@@ -5,11 +5,11 @@ import TrashIcon from "../atom/TrashIcon";
 
 export type TodoItemProps = {
   id: number;
-  contents: string;
+  title: string;
   onDelete?: () => void;
 };
 
-const TodoItem = ({ contents, onDelete }: TodoItemProps) => {
+const TodoItem = ({ title, onDelete }: TodoItemProps) => {
   const [isChecked, setIsChecked] = useState<boolean>(false);
   const handleCheck = () => setIsChecked((prev) => !prev);
 
@@ -20,7 +20,7 @@ const TodoItem = ({ contents, onDelete }: TodoItemProps) => {
     },
     checkedLabel: {
       isChecked,
-      contents,
+      title,
     },
     trashIcon: {
       onDelete,
