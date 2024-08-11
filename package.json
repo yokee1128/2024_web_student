@@ -6,7 +6,11 @@
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
     "@mui/icons-material": "^5.16.1",
+<<<<<<< HEAD
     "@mui/material": "^5.16.5",
+=======
+    "@mui/material": "^5.16.7",
+>>>>>>> c1e7ea0f25383e5a62f8022251d09efc65511e20
     "@mui/x-data-grid": "^7.11.1",
     "@mui/x-date-pickers": "^7.10.0",
     "@testing-library/jest-dom": "^5.17.0",
@@ -17,6 +21,7 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "axios": "^1.7.2",
+<<<<<<< HEAD
     "cors": "^2.8.5",
     "dayjs": "^1.11.11",
     "mysql": "^2.18.1",
@@ -25,6 +30,17 @@
     "react-calendar": "^5.0.0",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.26.0",
+=======
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dayjs": "^1.11.11",
+    "mysql": "^2.18.1",
+    "react": "^18.3.1",
+    "react-calendar": "^5.0.0",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.2.1",
+    "react-router-dom": "^6.24.1",
+>>>>>>> c1e7ea0f25383e5a62f8022251d09efc65511e20
     "react-scripts": "5.0.1",
     "recharts": "^2.12.7",
     "typescript": "^4.9.5",
@@ -32,7 +48,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
+<<<<<<< HEAD
     "build": "react-scripts build",
+=======
+    "build": "CI=false react-scripts build",
+>>>>>>> c1e7ea0f25383e5a62f8022251d09efc65511e20
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

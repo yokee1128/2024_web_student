@@ -1,12 +1,25 @@
+<<<<<<< HEAD
 //express 모듈 호출
+=======
+// express 모듈 호출
+>>>>>>> c1e7ea0f25383e5a62f8022251d09efc65511e20
 const express = require('express');
 const cors = require('cors');
 const app = express();
 const api = require('./routes/index');
+<<<<<<< HEAD
+=======
+const body = require('body-parser');
+>>>>>>> c1e7ea0f25383e5a62f8022251d09efc65511e20
 
 // CORS 설정
 app.use(cors());
 
+<<<<<<< HEAD
+=======
+app.use(body.json());
+
+>>>>>>> c1e7ea0f25383e5a62f8022251d09efc65511e20
 // api 처리는 './routes/index'에서 일괄처리
 app.use('/api', api);
 
@@ -16,6 +29,7 @@ const PORT = 4000;
 app.listen(PORT, () => {
     console.log(`Server run : http://localhost:${PORT}/`);
 });
+<<<<<<< HEAD
 
 // const mysql = require("mysql2/promise");
 
@@ -67,3 +81,5 @@ app.listen(PORT, () => {
 // app.get("/attendance_check/classList", async (req,res) => 
 //     res.json(await classList())
 // );
+=======
+>>>>>>> c1e7ea0f25383e5a62f8022251d09efc65511e20

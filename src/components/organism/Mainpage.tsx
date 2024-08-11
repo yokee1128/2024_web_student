@@ -9,6 +9,7 @@ import {useState, useEffect} from 'react'
 import dayjs from "dayjs";
 import BasicSelect from "../../lsk/components/BasicSelect";
 import axios from "axios";
+import Memo from "../../woo/Memo";
 
 type GradeType = {
   code: string,
@@ -21,13 +22,21 @@ const Mainpage = () => {
   const [pickGrade, setPickGrade] = useState<string>('');
   const [pickClass, setPickClass] = useState<string>('');
 
+
+  useEffect(() => {
+    setPickGrade(localStorage.getItem('grade')?.toString() || '');
+    setPickClass(localStorage.getItem('class')?.toString() || '');
+  },[])
+
   const handleGradeChange = (event: any) => {
     setPickGrade(event.target.value);
     setPickClass('');
+    localStorage.setItem('grade', event.target.value);
   };
 
   const handleClassChange = (event: any) => {
     setPickClass(event.target.value);
+    localStorage.setItem('class', event.target.value);
   };  
 
 
@@ -88,32 +97,34 @@ const Mainpage = () => {
         <div className="w-full my-4 mr-4 h-1/5 bg-gray-50 content-center text-center">
           <Navi />
         </div>
-        <div>
-          <BasicSelect inputlabelname="학년" menuitems={grades} value={pickGrade}  handleChange={handleGradeChange}/>
-          <BasicSelect inputlabelname="반" menuitems={units}  value={pickClass} handleChange={handleClassChange} />
-        </div>
-        <div className="w-full h-4/5 flex gap-4 border border-red-500">
+
+        <div className="w-full h-4/5 flex gap-4 ">
           <div className="w-2/3 h-full flex flex-col gap-4">
-            <div className="w-full h-3/5 flex gap-4 border border-red-500">
-              <div className="w-2/5 h-4/5 self-center content-center text-center border rounded-full border-red-500 ">
-                출석율 = 출첵인원 / 총인원수
+            <div className="w-full h-3/5 flex gap-4 ">
+              <div className="w-2/5 h-4/5 self-center content-center text-cente rrounded-full ">
+                <div>
+                    <BasicSelect inputlabelname="학년" menuitems={grades} value={pickGrade}  handleChange={handleGradeChange}/>
+                    <BasicSelect inputlabelname="반" menuitems={units}  value={pickClass} handleChange={handleClassChange} />
+                </div>
+
                 <AttendanceChart pickDt={pickDate} pickGrade={pickGrade} pickClass={pickClass} attendanceCnt={3} absenceCnt={5} chartheight={200} chartwith={280}/>
               </div>
-              <div className="w-3/5 h-full self-center content-center text-center border border-red-500 ">
-                출석현황 summary
+              <div className="w-3/5 h-full self-center content-center text-center "> 
+                 <span>출결현황</span>
                 <AttendanceList pickDt={pickDate} pickGrade={pickGrade} pickClass={pickClass}  />
               </div>
             </div>
-            <div className="w-full h-2/5 border border-red-500">
+            <div className="w-full h-2/5">
               선생님 메모장
+              <Memo pickDT={pickDate}  />
             </div>
           </div>
-          <div className="w-1/3 h-full flex flex-col gap-4 border border-red-500">
-            <div className="w-full h-1/2 border border-red-500">
+          <div className="w-1/3 h-full flex flex-col gap-4">
+            <div className="w-full h-1/2 ">
               <BasicDateCalendar pickDt={pickDate} setPickDt={setPickDate} />
             </div>
-            <div className="w-full h-1/2 border border-red-500 ">
-              이번주 행사 일정
+            <div className="w-full h-1/2 ">
+              이번주 행사
               <AttendanceSchedule pickDt={pickDate}/>
             </div>
           </div>

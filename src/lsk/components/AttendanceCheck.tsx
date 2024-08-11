@@ -1,3 +1,4 @@
+
 import Layout from "../../components/layout/Layout";
 import Navi from "../../components/molecules/Navi";
 import DatePickerValue from "../attendance/DatePicker";
@@ -57,6 +58,7 @@ const AttendanceCheck = () => {
             </div>
           </div> */}
         </div>
+
       </div>
     </div>
   );
